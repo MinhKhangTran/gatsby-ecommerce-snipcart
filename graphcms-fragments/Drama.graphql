@@ -1,0 +1,30 @@
+fragment Drama on Drama {
+  stage
+  remoteId: id
+  createdAt
+  updatedAt
+  publishedAt
+  name
+  desc
+  featured
+  date
+  price
+  stars
+  reviews
+  languages
+  thumbnail {
+    ... on Asset {
+      remoteTypeName: __typename
+      remoteId: id
+      locale
+    }
+  }
+  images {
+    ... on Asset {
+      remoteTypeName: __typename
+      remoteId: id
+      locale
+    }
+  }
+  fsk
+}
