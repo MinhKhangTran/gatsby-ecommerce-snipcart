@@ -6,10 +6,16 @@ const ProductImage = ({ thumbnail, images }) => {
   const [main, setMain] = React.useState(newArray[2].url)
   return (
     <div>
-      <img src={main} alt="poster" />
+      <div className="flex justify-center" style={{ height: "70vh" }}>
+        <img
+          className="object-cover object-top h-full"
+          src={main}
+          alt="poster"
+        />
+      </div>
       <article
         className="grid grid-cols-3 gap-4 mt-4 w-full"
-        style={{ height: "15vh" }}
+        style={{ height: "20vh" }}
       >
         {newArray.map((image, index) => {
           return (
@@ -18,6 +24,9 @@ const ProductImage = ({ thumbnail, images }) => {
               key={index}
               src={image.url}
               alt="weitere Bilder"
+              onClick={() => {
+                setMain(newArray[index].url)
+              }}
             />
           )
         })}

@@ -3,11 +3,11 @@ import { Link } from "gatsby"
 import { formatPrice } from "../utils"
 const Product = ({ remoteId, image, name, price }) => {
   return (
-    <Link to={`/products/${remoteId}`}>
+    <Link to={`/products/${name}`}>
       <article key={remoteId} className="hover:shadow-xl">
         <div className="w-full" style={{ height: "25vh" }}>
           <img
-            className="rounded object-cover h-full w-full"
+            className="rounded object-cover object-top h-full w-full"
             src={image}
             alt={name}
           />

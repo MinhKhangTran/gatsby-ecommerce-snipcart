@@ -7,7 +7,7 @@ exports.createPages = async ({ graphql, actions }) => {
     {
       products: allGraphCmsDrama {
         nodes {
-          remoteId
+          name
         }
       }
     }
@@ -15,10 +15,10 @@ exports.createPages = async ({ graphql, actions }) => {
 
   result.data.products.nodes.forEach(product => {
     createPage({
-      path: `/products/${product.remoteId}`,
+      path: `/products/${product.name}`,
       component: path.resolve(`src/templates/product-template.js`),
       context: {
-        remoteId: product.remoteId,
+        name: product.name,
       },
     })
   })

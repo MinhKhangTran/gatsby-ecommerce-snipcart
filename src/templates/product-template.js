@@ -45,8 +45,8 @@ const ProductTemplate = ({ data }) => {
 }
 
 export const query = graphql`
-  query GetSingleProduct($id: ID) {
-    graphCmsDrama(remoteId: { eq: $id }) {
+  query GetSingleProduct($name: String) {
+    graphCmsDrama(name: { eq: $name }) {
       date
       desc
       fsk
