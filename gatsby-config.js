@@ -8,9 +8,9 @@ module.exports = {
     description: `ecommerce`,
     author: `@mkt`,
     titleTemplate: `@s | Ecommerce`,
-    url: `https://gatsby-airtable-design-project.netlify.app/`,
-    iamge: `mainBcg.png`,
-    twitterUsername: `@john_smilga`,
+    url: `https://kdrama-ecommerce.netlify.app/`,
+    iamge: ``,
+    twitterUsername: ``,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -35,6 +35,22 @@ module.exports = {
       options: {
         name: `assets`,
         path: `${__dirname}/src/assets`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-snipcart`,
+      options: {
+        apiKey: process.env.SNIPCHART,
+        js: `https://cdn.snipcart.com/themes/v3.0.26/default/snipcart.js`,
+        styles: `https://cdn.snipcart.com/themes/v3.0.26/default/snipcart.css`,
+        autopop: true,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        tailwind: true,
+        purgeOnly: ["strc/css/main.css"],
       },
     },
   ],

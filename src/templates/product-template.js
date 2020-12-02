@@ -21,7 +21,7 @@ const ProductTemplate = ({ data }) => {
       remoteId,
     },
   } = data
-  console.log(remoteId)
+  // console.log(remoteId)
 
   return (
     <div className="breite">
@@ -39,6 +39,17 @@ const ProductTemplate = ({ data }) => {
           <h1>Reviews: {reviews}</h1>
           <Stars stars={stars} />
         </div>
+        <button
+          className="bg-amber-400 text-amber-800 px-3 py-1 rounded my-4 text-xl snipcart-add-item"
+          data-item-id={remoteId}
+          data-item-price={price / 100}
+          data-item-url={`https://kdrama-ecommerce.netlify.app/products/${name}`}
+          data-item-description={desc}
+          data-item-image={thumbnail.url}
+          data-item-name={name}
+        >
+          In den Warenkorb
+        </button>
       </section>
     </div>
   )
